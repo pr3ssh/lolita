@@ -28,6 +28,41 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
     text-decoration: none;
   }
 
+  .container-audio {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    background-color: #eee;
+    color: #fff;
+    margin: 0px auto;
+    overflow: hidden;
+  }
+
+  audio {
+      width: 100%;
+    }
+      audio::-webkit-media-controls-panel {
+        background: transparent;
+      }
+    audio::-webkit-media-controls-time-remaining-display {
+        color: grey;
+      }
+    audio::-webkit-media-controls-current-time-display {
+        color: cornflowerblue;
+      }
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-mute-button {
+        cursor: pointer;
+      }
+
+  /* audio::-webkit-media-controls-panel { */
+  /*   background-color: var(--color-bg); */
+  /* } */
+  /*  */
+  /* audio::-webkit-media-controls-mute-button, audio::-webkit-media-controls-play-button, audio::-webkit-media-controls-timeline-container, audio::-webkit-media-controls-current-time-display, audio::-webkit-media-controls-time-remaining-display, audio::-webkit-media-controls-timeline, audio::-webkit-media-controls-volume-slider-container, audio::-webkit-media-controls-volume-slider, audio::-webkit-media-controls-seek-back-button, audio::-webkit-media-controls-seek-forward-button, audio::-webkit-media-controls-fullscreen-button, audio::-webkit-media-controls-rewind-button, audio::-webkit-media-controls-return-to-realtime-button, audio::-webkit-media-controls-toggle-closed-captions-button { */
+  /*   color: var(--color-text); */
+  /* } */
+
   /* Slideshow container */
   .slideshow-container {
   }
@@ -56,9 +91,6 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
   }
 
   .content__text {
-    font-size: 1.1rem;
-    column-count: 2;
-    column-gap: 2rem;
     text-align: justify;
     margin-top: 7.5vh;
   }
@@ -118,4 +150,32 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
   @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
+  }
+
+  @media only screen and (min-width: 768px) {
+    /* Desktop */
+    .content__text {
+      font-size: 1.1rem;
+      column-count: 2;
+      column-gap: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* Mobile */
+    .item-image {
+      padding: 1rem 5rem 0rem 5rem;
+    }
+    .item-text {
+      padding: 0rem 5rem 1rem 5rem;
+    }
+    .item-image img {
+      width: 250px;
+      height: auto;
+    }
+    .content__text {
+      font-size: 1.1rem;
+      column-count: 1;
+      column-gap: 0rem;
+    }
   }
